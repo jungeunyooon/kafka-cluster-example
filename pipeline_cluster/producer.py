@@ -3,10 +3,12 @@ import time
 
 from kafka import KafkaProducer
 
-bootstrap_server = ["127.0.0.1:19092", "127.0.0.1:29092", "127.0.0.1:19092"]
+bootstrap_server = ["localhost:19094", "localhost:29094", "localhost:39094"]
+
+
 TOPIC_NAME = "additional"
 
-prod = KafkaProducer(bootstrap_servers=bootstrap_server)
+prod = KafkaProducer(bootstrap_servers=bootstrap_server, acks='all', retries=5)
 
 num = 0
 for i in range(1, 101):
@@ -16,3 +18,5 @@ for i in range(1, 101):
     prod.send(topic=TOPIC_NAME, value=json_tf.encode(encoding='utf-8'))
     # time.sleep(1)
     prod.flush()
+
+prod.close()
