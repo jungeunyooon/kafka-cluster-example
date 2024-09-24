@@ -18,7 +18,7 @@ services:
     image: 'bitnami/kafka:3.5.1-debian-11-r44'
     container_name: kafka1
     ports:
-      - '9094:9092'   # 내부 네트워크 통신을 위한 PLAINTEXT 리스너
+      - '9094:9092'   # 내부 네트워크 통신을 위한 PLAINTEXT 리스너  
       - '10001:10000' # 외부 접근을 위한 EXTERNAL 리스너
     environment:
       KAFKA_KRAFT_CLUSTER_ID: HsDBs9l6UUmQq7Y5E6bNlw
