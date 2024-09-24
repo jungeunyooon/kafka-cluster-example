@@ -3,7 +3,9 @@ import time
 
 from kafka import KafkaProducer
 
-bootstrap_server = ["localhost:19094", "localhost:29094", "localhost:39094"]
+# bootstrap_server = ["localhost:19094", "localhost:29094", "localhost:39094"]
+
+bootstrap_server = ["localhost:10001", "localhost:10002", "localhost:10003"]
 
 
 TOPIC_NAME = "additional"
