@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   zookeeper-1:
-    image: bitnami/zookeeper:3.7
+    image: 'bitnami/zookeeper:3.7'
     networks:
       - kafka-net
     ports:
@@ -17,7 +17,7 @@ services:
       - ZOOKEEPER_SERVERS=zookeeper-1:12888:13888;zookeeper-2:22888:23888;zookeeper-3:32888:33888
 
   zookeeper-2:
-    image: bitnami/zookeeper:3.7
+    image: 'bitnami/zookeeper:3.7'
     networks:
       - kafka-net
     ports:
@@ -32,7 +32,7 @@ services:
       - ZOOKEEPER_SERVERS=zookeeper-1:12888:13888;zookeeper-2:22888:23888;zookeeper-3:32888:33888
 
   zookeeper-3:
-    image: bitnami/zookeeper:3.7
+    image: 'bitnami/zookeeper:3.7'
     networks:
       - kafka-net
     ports:
@@ -47,7 +47,7 @@ services:
       - ZOOKEEPER_SERVERS=zookeeper-1:12888:13888;zookeeper-2:22888:23888;zookeeper-3:32888:33888
 
   kafka-1:
-    image: bitnami/kafka:3
+    image: 'bitnami/kafka'
     networks:
       - kafka-net
     ports:
@@ -69,7 +69,7 @@ services:
       - ./kafka-persistence/1:/bitnami/kafka
 
   kafka-2:
-    image: bitnami/kafka:3
+    image: 'bitnami/kafka'
     networks:
       - kafka-net
     ports:
@@ -92,7 +92,7 @@ services:
       - ./kafka-persistence/2:/bitnami/kafka
 
   kafka-3:
-    image: bitnami/kafka:3
+    image: 'bitnami/kafka'
     networks:
       - kafka-net
     ports:
